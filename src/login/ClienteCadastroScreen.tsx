@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Image, ImageBackground, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 
-function AdmLoginScreen(): JSX.Element{
+function ClienteCadastroScreen(): JSX.Element{
 
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
@@ -22,10 +22,10 @@ function AdmLoginScreen(): JSX.Element{
             <Image
             style = {styles.logo} 
             resizeMode="contain"
-            source={require('../assets/images/adm.png')}/>
+            source={require('../assets/images/cliente.png')}/>
            <View style = {styles.card}>
             
-        <Text style = {styles.title}>Login Adm</Text>
+        <Text style = {styles.title}>Login Cliente</Text>
        
         <TextInput
           style={styles.input}
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
         flex:1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor:'#ECDCC9',
+        backgroundColor:'#E1BB80',
         
     },
     card: {
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     },
     logo:{
         width:100,
-        height:100,
+        height:180,
         marginBottom:20,
         marginTop:-150
     },
@@ -138,4 +138,4 @@ const styles = StyleSheet.create({
 
 }); 
 
-export default AdmLoginScreen;
+export default ClienteCadastroScreen

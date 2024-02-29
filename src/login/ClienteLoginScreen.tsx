@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Image, ImageBackground, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 
-function AdmLoginScreen(): JSX.Element{
+function ClienteLoginScreen(): JSX.Element{
 
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
@@ -22,10 +22,10 @@ function AdmLoginScreen(): JSX.Element{
             <Image
             style = {styles.logo} 
             resizeMode="contain"
-            source={require('../assets/images/adm.png')}/>
+            source={require('../assets/images/cliente.png')}/>
            <View style = {styles.card}>
             
-        <Text style = {styles.title}>Login Adm</Text>
+        <Text style = {styles.title}>Login Cliente</Text>
        
         <TextInput
           style={styles.input}
@@ -138,4 +138,4 @@ const styles = StyleSheet.create({
 
 }); 
 
-export default AdmLoginScreen;
+export default ClienteLoginScreen;
