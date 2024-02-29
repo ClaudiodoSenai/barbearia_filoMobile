@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Image, ImageBackground, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 
-function ClienteCadastroScreen(): JSX.Element {
+function ProfissionalCadastroScreen(): JSX.Element {
 
     const [nome, setNome] = useState<string>("");
     const [celular, setCelular] = useState<string>("");
@@ -17,8 +17,10 @@ function ClienteCadastroScreen(): JSX.Element {
     const [cep, setCep] = useState<string>("");
     const [complemento, setComplemento] = useState<string>("");
     const [password, setPassword] = useState<string>("");
+    const [salario, setSalario] = useState<string>("");
 
-    function cadastro() {
+
+    function login() {
         const dados = {
             nome: nome,
             celular: celular,
@@ -34,6 +36,7 @@ function ClienteCadastroScreen(): JSX.Element {
             cep: cep,
             complemento: complemento,
             password: password,
+            salario: salario
         }
 
         console.log(dados)
@@ -42,14 +45,15 @@ function ClienteCadastroScreen(): JSX.Element {
     return (
         <ScrollView style={{ height: '100%', width: "auto" }}>
             <View style={styles.container}>
+
+
                 <Image
                     style={styles.logo}
                     resizeMode="contain"
-                    source={require('../assets/images/cliente.png')} />
+                    source={require('../assets/images/adm.png')} />
                 <View style={styles.card}>
 
-                    <Text style={styles.title}>Cadastro Cliente</Text>
-
+                    <Text style={styles.title}>Cadastrar Profissional</Text>
                     <TextInput
                         style={styles.input}
                         placeholder="Nome"
@@ -158,25 +162,29 @@ function ClienteCadastroScreen(): JSX.Element {
                         secureTextEntry
                     />
 
+                    <TextInput
+                        style={styles.input}
+                        placeholder="Salario"
+                        placeholderTextColor="#151413"
+                        keyboardType="decimal-pad"
+                        onChangeText={(textSalario) => setSalario(textSalario)}
+                        secureTextEntry
+                    />
+
 
 
                     <TouchableOpacity
-                        onPress={() => { cadastro() }}
+                        onPress={() => { login() }}
                         style={styles.button}>
-                        <Text style={styles.buttonText}>Entrar</Text>
+                        <Text style={styles.buttonText}>Cadastrar</Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity>
-                        <Text style={styles.forgotPassword}>Esqueceu a senha?</Text>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity>
-                        <Text style={styles.forgotPassword}>Não possui conta? Cadastre-se!</Text>
+                        <Text style={styles.forgotPassword}>Já possui conta? Faça Login!</Text>
                     </TouchableOpacity>
                 </View>
             </View>
         </ScrollView>
-
     );
 }
 
@@ -185,7 +193,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#E1BB80',
+        backgroundColor: '#ECDCC9',
 
     },
     card: {
@@ -199,8 +207,8 @@ const styles = StyleSheet.create({
         shadowRadius: 2
     },
     logo: {
-        width: 120,
-        height: 120,
+        width: 100,
+        height: 100,
         marginBottom: 20,
         marginTop: 0
     },
@@ -256,4 +264,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default ClienteCadastroScreen
+export default ProfissionalCadastroScreen;
